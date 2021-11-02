@@ -48,7 +48,7 @@ function loadDvdTable() {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvds',
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvds',
         success: function (dvdArray) {
 
             // Loop through database to assign data and append into table
@@ -134,7 +134,7 @@ function editDvd(id) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvd/' + id,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvd/' + id,
 
         // Assign data from database
         success: function (data, status) {
@@ -176,7 +176,7 @@ function deleteDvd(id) {
         // Perform ajax call DELETE
         $.ajax({
             type: 'DELETE',
-            url: 'https://localhost:44350/dvd/' + id,
+            url: 'https://dvdlibraryapi.azurewebsites.net/dvd/' + id,
 
             // Reload initial page upon success
             success: function () {
@@ -237,7 +237,7 @@ function searchByTitle(titleSearch) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvds/title/' + titleSearch,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvds/title/' + titleSearch,
         success: function (dvdArray) {
 
             // Check if the database returned any data
@@ -279,7 +279,7 @@ function searchByReleaseYear(releaseYearSearch) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvds/year/' + releaseYearSearch,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvds/year/' + releaseYearSearch,
         success: function (dvdArray) {
 
             // Check if the database returned any data
@@ -330,7 +330,7 @@ function searchByDirector(directorSearch) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvds/director/' + directorSearch,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvds/director/' + directorSearch,
         success: function (dvdArray) {
 
             // Check if the database returned any data
@@ -371,7 +371,7 @@ function searchByRating(ratingSearch) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvds/rating/' + ratingSearch,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvds/rating/' + ratingSearch,
         success: function (dvdArray) {
 
             // Check if the database returned any data
@@ -434,7 +434,7 @@ function displayDvd(contactId) {
     // Perform ajax call GET
     $.ajax({
         type: 'GET',
-        url: 'https://localhost:44350/dvd/' + contactId,
+        url: 'https://dvdlibraryapi.azurewebsites.net/dvd/' + contactId,
         success: function (data, status) {
             var title = data.title;
             var releaseYear = data.releaseYear;
@@ -549,7 +549,7 @@ function saveEditButton() {
             // Perform ajax call PUT
             $.ajax({
                 type: 'PUT',
-                url: 'https://localhost:44350/dvd/' + id,
+                url: 'https://dvdlibraryapi.azurewebsites.net/dvd/' + id,
                 data: JSON.stringify({
                     title: $('#editTitleInput').val(),
                     releaseYear: $('#editYearInput').val(),
@@ -620,7 +620,7 @@ function createDvdButton() {
             // Perform ajax call POST
             $.ajax({
                 type: 'POST',
-                url: 'https://localhost:44350/dvd',
+                url: 'https://dvdlibraryapi.azurewebsites.net/dvd',
                 data: JSON.stringify({
                     title: $('#createTitleInput').val(),
                     releaseYear: $('#createYearInput').val(),
